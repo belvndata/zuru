@@ -13,8 +13,9 @@
    #LIQ+#RFI+#SHIB+#DOGE = #ZURU
 
    #ZURU features:
-   3% fee auto add to the liquidity pool to locked forever when selling
-   2% fee auto distribute to all holders
+   Total taxfee will reduce to 8% after 120 days
+   50% of total taxfee auto add to the liquidity pool to locked forever when selling
+   50% of totalfee auto distribute to all holders and Burn.
    I created a black hole so #ZURU token will deflate itself in supply with every transaction
    50% Supply is burned at start.
    
@@ -723,7 +724,7 @@ contract ZURU is Context, IERC20, Ownable {
     string private _symbol = "ZURU";
     uint8 private _decimals = 9;
     
-    uint256 public _taxFee = ((block.timestamp - 1622764800) > 10368000 ? (1600 * ((block.timestamp - 1622764800) / 10368000): 0) + 2; 
+    uint256 public _taxFee = (((block.timestamp - 1622764800) > 10368000) ? (1600 * ((block.timestamp - 1622764800) / 10368000)) : 0) + 2; 
     uint256 private _previousTaxFee = _taxFee;
     
     uint256 public _liquidityFee = _taxFee; 
